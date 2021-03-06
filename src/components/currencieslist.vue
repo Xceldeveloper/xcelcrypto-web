@@ -37,9 +37,10 @@
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="ml-4 content-center">
-              <div class="text-sm text-center font-medium text-gray-900">
-                {{ percentages[index] + "%" }}
-              </div>
+              <div
+                class="text-sm text-center font-medium text-gray-900"
+                v-html="percentages[index]"
+              ></div>
             </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
@@ -97,11 +98,22 @@ export default {
         this.currencies[index].name.toLowerCase(),
         {}
       );
-      this.percentages.splice(
-        index,
-        0,
-        res.data.market_data.price_change_percentage_24h.toFixed(2)
-      );
+      var rox =
+        res.data.market_data.price_change_percentage_24h.toFixed(2) + "";
+
+      if (rox.indexOf("-") > -1) {
+        this.percentages.splice(
+          index,
+          0,
+          '<span style="color:red">' + rox + "%</span>"
+        );
+      } else {
+        this.percentages.splice(
+          index,
+          0,
+          '<span style="color:green">' + "+" + rox + "%</span>"
+        );
+      }
     },
   },
   watch: {

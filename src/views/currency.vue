@@ -1,10 +1,10 @@
 <template>
   <div>
    
-    {{data.data.market_data.price_change_percentage_24h.toFixed(2)}}
+    {{Object.keys(data.data.market_data)}}
     <br />
     <br />
-    {{ data }}
+    {{ data.data.market_data.ath.usd}}
   </div>
 </template>
 
