@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Homex from '../views/Homex.vue'
+import Currency from '../views/currency.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Homex',
+    component: Homex
+  },
+  {
+    path:'/currency',
+    name:'Currency',
+    component:Currency
   },
   {
     path: '/about',

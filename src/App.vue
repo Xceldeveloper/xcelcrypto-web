@@ -1,13 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-       <div id="app" class="min-h-screen flex items-center justify-center">
-    <h1 class="text-6xl font-bold text-purple-500">Hello from Tailwind.</h1>
-  </div>
-
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
