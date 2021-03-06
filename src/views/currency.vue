@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{ currency }}
+   
+    {{data.data.market_data.price_change_percentage_24h.toFixed(2)}}
     <br />
     <br />
     {{ data }}
@@ -19,12 +20,17 @@ export default {
     };
   },
   mounted() {
-      this.currency = this.$route.params.name
-    this.getDetails();
+      this.currency = this.$route.query.name
+      console.log(this.currency)
+
+        this.getDetails();
+
   },
   methods: {
     async getDetails() {
-      this.data = await CoinGeckoClient.coins.fetch(this.currency, {});
+      let datax = await CoinGeckoClient.coins.fetch('bitcoin', {});
+      this.data = datax
+      console.log(JSON.stringify(this.data,2,null))
     },
   },
 };
