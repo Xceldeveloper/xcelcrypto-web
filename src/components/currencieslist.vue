@@ -10,8 +10,8 @@
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <tr v-for="(currency, index) in currencies" :key="index">
-          <td class="px-6 py-4 whitespace-nowrap">
+        <tr v-for="(currency, index) in currencies" :key="index" >
+          <td class="px-6 py-4 whitespace-nowrap" v-if="index <= 29">
             <div class="flex items-center">
               <div class="flex-shrink-0 h-10 w-10">
                 <img
@@ -30,12 +30,12 @@
               </div>
             </div>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" v-if="index <= 29">
             <div class="text-sm text-gray-900">
               {{ formatCurrency(currency.market_data.current_price.usd) }}
             </div>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" v-if="index <= 29">
             <div class="ml-4 content-center">
               <div
                 class="text-sm text-center font-medium text-gray-900"
@@ -43,7 +43,7 @@
               ></div>
             </div>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap" v-if="index <= 29">
             <div class="text-sm text-gray-900">
               {{ formatCurrency(currency.market_data.market_cap.usd) }}
             </div>
